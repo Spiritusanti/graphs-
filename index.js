@@ -37,13 +37,17 @@ class Graph {
     this.adjacentList = {};
   }
   addVertex(node) {
-    
+    // create new node as key
+    this.adjacentList[node] = [];
+    this.numberOfNodes++;
   }
   addEdge(node1, node2) {
-    // undirected Graph
+    // undirected Graph - add array [] of adjacent nodes
+    this.adjacentList[node1].push(node2);
+    this.adjacentList[node2].push(node1);
   }
   showConnections() {
-
+    console.log(this.adjacentList);
   }
 }
 
